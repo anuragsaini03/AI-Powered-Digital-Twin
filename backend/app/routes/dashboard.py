@@ -1,27 +1,24 @@
 from fastapi import APIRouter
 
-router = APIRouter(
-    prefix="/api/dashboard",
-    tags=["Dashboard"]
-)
+router = APIRouter()
 
 
-@router.get("/")
+@router.get("/dashboard/")
 def get_dashboard():
-
     return {
         "roads": {
             "score": 82,
             "total": 120
         },
         "traffic": {
-            "status": "Normal",
-            "score": 78
+            "score": 78,
+            "status": "Normal"
         },
         "issues": {
             "total": 24
         },
         "air_quality": {
-            "score": 64
+            "score": 64,
+            "status": "Moderate"
         }
     }
